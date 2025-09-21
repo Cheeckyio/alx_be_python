@@ -9,7 +9,7 @@ time_bound = input("Is it time-bound? (yes/no): ")
 print()  # Add a blank line for better formatting
 
 # Process the task based on priority using Match Case
-match priority:
+match priority.lower():
     case "high":
         if time_bound.lower() == "yes":
             print(f"Reminder: '{task}' is a high priority task that requires immediate attention today!")
@@ -30,4 +30,3 @@ match priority:
     
     case _:
         print(f"Invalid priority level. Please restart and enter high, medium, or low.")
-        
