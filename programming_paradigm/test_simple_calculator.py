@@ -1,3 +1,4 @@
+
 import unittest
 from simple_calculator import SimpleCalculator
 
@@ -15,6 +16,8 @@ class TestSimpleCalculator(unittest.TestCase):
         """Test the addition method with basic cases."""
         self.assertEqual(self.calc.add(2, 3), 5)
         self.assertEqual(self.calc.add(-1, 1), 0)
+        self.assertEqual(self.calc.add(10, 5), 15)
+        self.assertEqual(self.calc.add(-5, -3), -8)
 
     def test_add_positive_numbers(self):
         """Test addition of two positive numbers."""
@@ -43,6 +46,13 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertAlmostEqual(self.calc.add(0.1, 0.2), 0.3)
 
     # ==================== SUBTRACTION TESTS ====================
+
+    def test_subtraction(self):
+        """Test the subtraction method."""
+        self.assertEqual(self.calc.subtract(10, 5), 5)
+        self.assertEqual(self.calc.subtract(20, 8), 12)
+        self.assertEqual(self.calc.subtract(5, 10), -5)
+        self.assertEqual(self.calc.subtract(-5, -3), -2)
 
     def test_subtract_positive_numbers(self):
         """Test subtraction of two positive numbers."""
@@ -77,6 +87,13 @@ class TestSimpleCalculator(unittest.TestCase):
 
     # ==================== MULTIPLICATION TESTS ====================
 
+    def test_multiplication(self):
+        """Test the multiplication method."""
+        self.assertEqual(self.calc.multiply(3, 4), 12)
+        self.assertEqual(self.calc.multiply(-2, 5), -10)
+        self.assertEqual(self.calc.multiply(-3, -3), 9)
+        self.assertEqual(self.calc.multiply(10, 0), 0)
+
     def test_multiply_positive_numbers(self):
         """Test multiplication of two positive numbers."""
         self.assertEqual(self.calc.multiply(4, 5), 20)
@@ -110,6 +127,13 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertAlmostEqual(self.calc.multiply(1.5, 3.5), 5.25)
 
     # ==================== DIVISION TESTS ====================
+
+    def test_division(self):
+        """Test the division method."""
+        self.assertEqual(self.calc.divide(10, 2), 5.0)
+        self.assertEqual(self.calc.divide(9, 3), 3.0)
+        self.assertAlmostEqual(self.calc.divide(7, 2), 3.5)
+        self.assertIsNone(self.calc.divide(10, 0))
 
     def test_divide_positive_numbers(self):
         """Test division of two positive numbers."""
@@ -156,3 +180,4 @@ class TestSimpleCalculator(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
